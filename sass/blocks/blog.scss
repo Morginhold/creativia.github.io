@@ -1,0 +1,154 @@
+$postTextTitle: rgb(46, 46, 46);
+$adminComText: rgb(162, 162, 162);
+$postTextText: rgb(80, 80, 80);
+$hoverImg: rgba(255, 255, 255, 0.5);
+$buttonButtomBg: #f2f2f2;
+
+.blog{
+    .horiz-scroll{
+        @include horiz-scroll($colorRoze);
+    }
+}
+.blog-wrap{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.blog-title{
+    @include title($black);
+}
+.blog-text{
+    @include section-center-text();
+}
+.blog-posts{
+    margin-top: 80px;
+}
+.blog-post{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.blog-post-img{
+    display: block;
+    width: 370px;
+    margin-right: 30px;
+    position: relative;
+    &:before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: $hoverImg;
+        opacity: 0;
+        transition-duration: 500ms;
+        transition-property: opacity;
+    }
+    img{
+        object-fit: cover;
+        width: 370px;
+        height: 100%;
+    }
+    &:hover, &:active{
+        &:before{
+            opacity: 1;
+        }
+    }
+}
+.post-text-title{
+    font-size: 20px;
+    font-family: "Raleway";
+    color: $postTextTitle;
+    font-weight: 700;
+    line-height: 1.05; 
+    margin-top: 0px;
+}
+.admin-com-text{
+    font-size: 12px;
+    font-family: "Lato";
+    color: $adminComText;
+    line-height: 1.1;
+    margin: 0;
+}
+.admin-com-block{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 20px;
+}
+.admin-com-img{
+    margin-right: 8px;
+}
+.admin-com-blocks{
+    display: flex;
+    justify-content: flex-start;
+}
+.post-text-text{
+    font-size: 16px;
+    font-family: "Lato";
+    color: $postTextText;
+    line-height: 1.25; 
+    margin-bottom: 30px; 
+    text-align: justify; 
+}
+.button-post{
+    @include button($black-bg);
+    width: 120px;
+    font-size: 16px;
+    padding: 13px 0px;
+}
+.block-bottom-button{
+    margin: 0 auto;
+    display: block;
+    background-color: $buttonButtomBg;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    transition-duration: 500ms;
+    transition-property: background-color;
+    &:before{
+        content: '';
+        width: 21px;
+        height: 14px;
+        background: url(../img/arrow-bottom.png) no-repeat;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover, &:active{
+        background-color: darken($buttonButtomBg, 10%);
+        &::before{
+            background-position: 0 -14px;
+        }
+    }
+}
+
+@media (max-width: 680px){
+    .blog-post{
+        flex-direction: column;
+    }
+    .blog-post-img{
+        margin-right: 0px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px){
+    .blog-post-img{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    .blog-wrap {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .blog-posts {
+        margin-top: 60px;
+    }
+}

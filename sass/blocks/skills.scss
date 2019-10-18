@@ -1,0 +1,95 @@
+$textBlockSkills: rgb(80, 80, 80);
+
+.skills-wrap{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.skills-title{
+    @include title($black);
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+.text-skills{
+    @include section-center-text();
+    font-weight: 500;
+}
+.skills-blocks{
+    margin: 80px auto 0px;
+    max-width: 750px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    grid-gap: 40px;
+}
+.skills-circle{
+    position: relative;
+    height: 150px;
+    display: block;
+}
+.block-skills{
+    &:nth-child(1){
+        .skills-circle{
+            background: url(../img/elips-1.png) no-repeat;
+            background-position: center;
+        }
+    }
+    &:nth-child(2){
+        .skills-circle{
+            background: url(../img/elips-2.png) no-repeat;
+            background-position: center;
+        }
+    }
+    &:nth-child(3){
+        .skills-circle{
+            background: url(../img/elips-3.png) no-repeat;
+            background-position: center;
+        }
+    }
+    &:nth-child(4){
+        .skills-circle{
+            background: url(../img/elips-1.png) no-repeat;
+            background-position: center;
+        }
+    }
+}
+.text-circle{
+    font-size: 40px;
+    font-family: "Lato";
+    color: $colorRoze;
+    text-align: center;
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    span{
+        color: $black;
+    }
+}
+.title-block-slills{
+    font-size: 20px;
+    font-family: "Raleway";
+    color: $blockText;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.text-block-skills{
+    font-size: 16px;
+    font-family: "Lato";
+    color: $textBlockSkills;
+    line-height: 1.125;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 480px){
+    .skills-wrap {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .skills-blocks {
+        margin: 60px auto 0px;
+    }
+}

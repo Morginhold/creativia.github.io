@@ -1,0 +1,105 @@
+$tablePrice: #f2f2f2;
+$blackTextBg: #262626;
+$borderTable: #e7e7e7;
+
+.plans{
+    .horiz-scroll{
+        @include horiz-scroll($colorRoze);
+    }
+}
+.plans-wrap{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.title-plans{
+    @include title($black);
+}
+.text-plans{
+    @include section-center-text();
+}
+.plans-blocks{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    grid-gap: 30px;
+}
+.table-title{
+    background-color: $black-bg;
+}
+.table-title-p{
+    font-size: 20px;
+    font-family: "Raleway";
+    color: $happyText;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 0;
+}
+.table-price{
+    background-color: $tablePrice;
+    transition-duration: 500ms;
+    transition-property: background-color;
+}
+.price-p{
+    font-size: 30px;
+    font-family: "Lato";
+    color: $blackTextBg;
+    text-align: center; 
+    line-height: 1.0; 
+    padding: 20px; 
+    margin: 0; 
+    font-weight: 800;
+    transition-duration: 500ms;
+    transition-property: color;
+    span{
+        font-size: 16px;
+        font-weight: 300;
+        transition-duration: 500ms;
+        transition-property: color;
+    }
+}
+.plans-table-td{
+    padding: 0;
+    border: 1px solid $borderTable;
+    border-top: none;
+}
+.table-text{
+    font-size: 16px;
+    font-family: "Lato";
+    color: $blackTextBg;
+    line-height: 1.1;
+    text-align: center;  
+}
+.table-button{
+    @include button($black-bg);
+    width: 210px;
+    margin: 20px auto;
+    font-size: 18px;
+    padding: 10px;
+}
+.plans-table{
+    &:hover, &:active{
+        .table-price{
+            background-color: $colorRoze;
+        }
+        .price-p{
+            color: $white;
+        }
+        .table-button{
+            background-color: $colorRoze;
+            &:hover, &:active{
+                background-color: darken($colorRoze, 15%);
+            }
+        }
+    }
+}
+
+@media (max-width: 480px){
+    .plans-wrap {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .plans-blocks {
+        margin-top: 60px;
+    }
+}

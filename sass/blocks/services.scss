@@ -1,0 +1,204 @@
+$servBg: #272727;
+$servTitleText: #a4a4a4;
+$serBlockText: rgb(164, 164, 164);
+$serBlockTextBg: #343434;
+$hoverText: #3d2329;
+
+.services{
+    background-color: $servBg;
+}
+.services-wrap{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.title-services{
+    @include title();
+    margin-bottom: 40px;
+}
+.text-services{
+    @include section-center-text($servTitleText);
+}
+.blocks-services{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 60px;
+}
+.title-icon{
+    width: 66px;
+    height: 57px;
+    position: relative;
+    margin-right: 30px;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        z-index: 2;
+    }
+}
+.icon-title-bg{
+    fill: $servTitleText;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    transition-duration: 500ms;
+    transition-property: fill;
+}
+.services-block{
+    &:nth-child(1){
+        .title-icon{
+            &::before{
+                background: url(../img/develop.png) no-repeat;
+                width: 31px;
+                height: 23px;
+            }
+        }
+    }
+    &:nth-child(2){
+        .title-icon{
+            &::before{
+                background: url(../img/html.png) no-repeat;
+                width: 24px;
+                height: 28px;
+            }
+        }
+    }
+    &:nth-child(3){
+        .title-icon{
+            &::before{
+                background: url(../img/wordprss.png) no-repeat;
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+    &:nth-child(4){
+        .title-icon{
+            &::before{
+                background: url(../img/application.png) no-repeat;
+                width: 23px;
+                height: 28px;
+            }
+        }
+    }
+    &:nth-child(5){
+        .title-icon{
+            &::before{
+                background: url(../img/ux.png) no-repeat;
+                width: 23px;
+                height: 24px;
+            }
+        }
+    }
+    &:nth-child(6){
+        .title-icon{
+            &::before{
+                background: url(../img/layot.png) no-repeat;
+                width: 35px;
+                height: 24px;
+            }
+        }
+    }
+}
+.title-text{
+    font-size: 20px;
+    font-family: "Raleway";
+    color: $happyText;
+    text-transform: uppercase;
+    line-height: 1.2;   
+    margin: 0; 
+}
+.ser-block-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ser-block-text{
+    font-size: 16px;
+    font-family: "Lato";
+    color: $serBlockText;
+    line-height: 1.375; 
+    text-align: justify;
+    margin: 0;
+    margin-top: 30px;
+    padding: 30px;
+    background-color: $serBlockTextBg;
+    transition-duration: 500ms;
+    transition-property: color, background-color;
+}
+.services-block{
+    &:hover, &:active{
+        .icon-title-bg{
+            fill: $colorRoze;
+        }
+        .ser-block-text{
+            background-color: $hoverText;
+            color: $white;
+        }
+        &:nth-child(1){
+            .title-icon{
+                &:before{
+                    background-position: 0 -23px;
+                }
+            }
+        }
+        &:nth-child(2){
+            .title-icon{
+                &::before{
+                    background-position: 0 -28px;
+                }
+            }
+        }
+        &:nth-child(3){
+            .title-icon{
+                &::before{
+                    background-position: 0 -35px;
+                }
+            }
+        }
+        &:nth-child(4){
+            .title-icon{
+                &::before{
+                    background-position: 0 -28px;
+                }
+            }
+        }
+        &:nth-child(5){
+            .title-icon{
+                &::before{
+                    background-position: 0 -24px;
+                }
+            }
+        }
+        &:nth-child(6){
+            .title-icon{
+                &::before{
+                    background-position: 0 -24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 680px){
+    .blocks-services {
+        grid-template-columns: 1fr;
+        grid-row-gap: 60px;
+    }
+}
+
+@media (max-width: 480px){
+    .services-wrap {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .blocks-services {
+        margin-top: 60px;
+    }
+}
+

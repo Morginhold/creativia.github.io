@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@import 'normalize';
+@import 'variables';
+@import 'fonts';
+@import 'mixins';
+@import 'core';
+
+@import 'blocks/header';
+@import 'blocks/about';
+@import 'blocks/portfolio';
+@import 'blocks/our-product';
+@import 'blocks/clints';
+@import 'blocks/teamwork';
+@import 'blocks/skills';
+@import 'blocks/services';
+@import 'blocks/plans';
+@import 'blocks/news-black';
+@import 'blocks/blog';
+@import 'blocks/follow';
+@import 'blocks/fine';
+@import 'blocks/footer';
+
+@import "blocks/slider/owl.carousel";
+@import "blocks/slider/owl.theme.default";
+
+@import "blocks/jquery-ui/jquery-ui";

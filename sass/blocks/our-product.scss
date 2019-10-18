@@ -1,0 +1,194 @@
+$button-color: #393939;
+$elementBorder: rgb(231, 231, 231);
+$blockText: rgb(38, 38, 38);
+$ronbColor: #e7e7e7;
+
+.our-prod-wrap{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.our-product{
+    .horiz-scroll{
+        @include horiz-scroll($colorRoze);
+    }
+}
+.our-prod-title{
+    @include title($black);
+}
+.our-prod-text{
+    @include section-center-text();
+}
+.our-product-blocks{
+    display: grid;
+    grid-template-columns:  1fr 425px 1fr;
+    margin-top: 80px;
+}
+.prod-center-block{
+    position: relative;
+    img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+.button-center-block{
+    @include button($button-color);
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    padding: 13px 0px;
+}
+.block-list{
+    padding-left: 0;
+    margin: 0;
+}
+
+.left-block-element-icon{
+    fill: $ronbColor;
+}
+.prod-block-elem-left{
+    border-style: solid;
+    border-width: 1px;
+    border-color: $elementBorder;
+    margin-bottom: 20px;
+    position: relative;
+    transition-duration: 500ms;
+    transition-property: background-color;
+    cursor: pointer;
+    &:hover, &:active{
+        background-color: $hover-color;
+        .left-block-element-icon{
+            fill: $white;
+        }
+        .left-block-text{
+            color: $white;
+        }
+        .left-block-icon::before{
+            background-position: 0px -10px;
+        }
+    }
+}
+.left-block-icon{
+    position: relative;
+    width: 37px;
+    height: 32px;
+    &::before{
+        content: '';
+        background: url(../img/prod-icon.png) no-repeat 0 0;
+        width: 13px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+}
+.left-block-text{
+    font-size: 20px;
+    font-family: "Raleway";
+    color: $blockText;
+    text-transform: uppercase;
+    line-height: 1.2;   
+    margin: 0;
+    text-align: right;
+    padding: 15px 65px 15px 15px;
+    transition-duration: 500ms;
+    transition-property: color;
+    
+}
+.left-block-element-icon{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    transition-duration: 500ms;
+    transition-property: fill;
+}
+.prod-left-block{
+    margin-right: -15px;
+}
+.prod-left-block.right{
+    margin-left: -15px;
+    margin-right: 0px;
+}
+.left-elem-bl.right{
+    left: 15px;
+}
+.left-block-text.right{
+    padding: 15px 15px 15px 65px;
+    text-align: left;
+}
+.left-elem-bl{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 980px){
+    .our-product-blocks{
+        grid-template-rows: auto auto;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .prod-left-block{
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        margin-right: 10px;
+    }
+    .prod-left-block.right{
+        grid-row: 2 / 3;
+        grid-column: 3 / -1;
+        margin-left: 10px;
+    }
+    .prod-center-block{
+        grid-column: 2 / 4;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 650px){
+    .prod-center-block{
+        width: 290px;
+        grid-column: 1 / -1;
+        margin: 0 auto 30px;
+    }
+    .our-product-blocks{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .prod-left-block{
+        grid-column: 1 / 2;
+    }
+    .prod-left-block.right{
+        grid-column: 2 / 3;
+    }
+}
+
+@media (max-width: 510px){
+    .our-product-blocks{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        margin-top: 35px;
+    }
+    .prod-left-block{
+        grid-column: 1 / 2;
+    }
+    .prod-left-block.right{
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .our-prod-wrap {
+        padding-top: 70px;
+        padding-bottom: 50px;
+    }
+    .left-elem-bl{
+        left: 15px;
+    }
+    .left-block-text{
+        padding: 15px 15px 15px 65px;
+        text-align: left;
+    }
+}

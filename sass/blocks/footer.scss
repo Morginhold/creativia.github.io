@@ -1,0 +1,28 @@
+$footerText: rgb(142, 142, 142);
+
+.footer{
+    background-color: $black-bg;
+    padding: 30px 15px;
+    position: relative;
+}
+.logo-footer{
+    margin: 0 auto;
+    display: block;
+}
+.footer-author{
+    margin: 0px;
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: $footerText;
+    line-height: 1.063;
+}
+
+@media (max-width: 680px){
+    .footer-author{
+        display: none;
+    }
+}

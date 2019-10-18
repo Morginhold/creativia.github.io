@@ -1,0 +1,113 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin min-max($min-width, $max-width, $padding) {
+  min-width: $min-width;
+  max-width: $max-width;
+  padding: 0 $padding;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@mixin adaptive-video() {
+  position: relative;
+  padding-bottom: 56.25%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0,0,0,0);
+  overflow: hidden;
+}
+
+@mixin button($bg: $black-button){
+    background-color: $bg;
+    font-size: 20px;
+    font-family: "Raleway";
+    color: $white;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    cursor: pointer;
+    box-shadow: none;
+    border: none;
+    appearance: none;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    @content;
+    
+    &:hover, &:active{
+      background-color: $hover-color;
+    }
+}
+
+@mixin title($color: $white){
+    color: $color;
+    font-size: 30px;
+    font-family: "Raleway";
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 0px;
+    span{
+      color: $colorRoze;
+    }
+    @content;
+}
+
+@mixin horiz-scroll($bgColHorScroll: $black-bg){
+  max-width: 515px;
+  height: 1px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  background-color: $bgColHorScroll;
+  svg{
+    position: absolute;
+    left: 50%;
+    top: -9px;
+    fill: $bgColHorScroll;
+    transform: translateX(-50%);
+    display: block;
+  }
+  @content;
+}
+
+@mixin section-center-text($text-color: $aboutText){
+  font-size: 16px;
+  font-family: "Lato";
+  color: $text-color;
+  font-weight: 700;
+  line-height: 1.375;
+  text-align: center;
+  span{
+    color: $colorRoze;
+  }
+  @content;
+}

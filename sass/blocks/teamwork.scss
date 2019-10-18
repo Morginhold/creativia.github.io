@@ -1,0 +1,162 @@
+$teamBorder: #e7e7e7;
+
+.teamwork{
+    .horiz-scroll{
+        @include horiz-scroll($colorRoze);
+    }
+}
+.teamwork-wrap{
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+.title-teamwork{
+    @include title($black);
+    margin-bottom: 40px;
+}
+.text-teamwork{
+    @include section-center-text();
+}
+.teamwork-blocks{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+.team-block-img{
+    height: 240px;
+    display: block;
+}
+.teamwork-block{
+    &:nth-child(1){
+        .team-block-img{
+            background: url(../img/wayne.jpg) no-repeat;
+            background-size: cover;
+        }
+    }
+}
+.teamwork-block{
+    &:nth-child(2){
+        .team-block-img{
+            background: url(../img/arm.jpg) no-repeat;
+            background-size: cover;
+        }
+    }
+}
+.teamwork-block{
+    &:nth-child(3){
+        .team-block-img{
+            background: url(../img/sara.jpg) no-repeat;
+            background-size: cover;
+        }
+    }
+}
+.teamwork-block{
+    &:nth-child(4){
+        .team-block-img{
+            background: url(../img/johan.jpg) no-repeat;
+            background-size: cover;
+        }
+    }
+}
+.team-block-hover{
+    background-color: $black-bg;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    transition-duration: 500ms;
+    transition-property: opacity;
+}
+.block-hov-icon{
+    display: flex;
+    width: 158px;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.icon-block{
+    width: 47px;
+    height: 41px;
+    position: relative;
+    &:hover, &:active{
+        .icon-bl-bg{
+            fill: $colorRoze;
+        }
+        .team-icon{
+            fill: $white;
+        }
+    }
+}
+.icon-bl-bg{
+    width: 100%;  
+    fill: $white;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 1;
+    transition-duration: 500ms;
+    transition-property: fill;
+}
+.team-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: $colorRoze;
+    z-index: 2;
+    transition-duration: 500ms;
+    transition-property: fill;
+}
+.team-block-text{
+    border: 1px solid $teamBorder;
+    padding: 30px;
+    transition-duration: 500ms;
+    transition-property: border-color;
+}
+.team-bl-title{
+    font-size: 20px;
+    font-family: "Raleway";
+    color: $aboutTitle;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    transition-duration: 500ms;
+    transition-property: color;
+}
+.team-bl-prof{
+    font-size: 16px;
+    font-family: "Lato";
+    color: $aboutText;
+    line-height: 1.375;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.teamwork-block{
+    &:hover, &:active{
+        .team-block-hover{
+            opacity: 1;
+        }
+        .team-block-text{
+            border-color: $black;
+        }
+        .team-bl-title{
+            color: $colorRoze;
+        }
+    }
+}
+
+@media (max-width: 480px){
+    .teamwork-wrap {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .teamwork-blocks {
+        margin-top: 60px;
+    }
+}
+  
